@@ -1,0 +1,23 @@
+<!-- 4. Write a function to perform this. You are given two numbers n1 and n2. You need to find the 
+sum of the products of their corresponding digits. So, for a number n1= 6 and n2 = 34, you'll do (6*4)+(0*3) = 24. -->
+
+
+<html>
+    <head>
+        <title>Assignment</title>
+
+    </head>
+    <body>
+        <Script>
+            var n1=26;
+            var n2=35;
+
+            function sum (n1, n2) {
+                n3=((n1%10) * (n2%10)) + (parseInt(n1/10) * parseInt(n2/10))
+                console.log(n3);
+                document.write(n3);
+            }
+            sum(n1,n2)
+        </Script>
+    </body>
+</html>
