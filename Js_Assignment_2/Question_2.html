@@ -1,0 +1,38 @@
+<!-- Write a function to calculate which can add, subtract, multiply and divide two numbers. Use switch inside function. -->
+
+<html>
+  <head>
+    <title>question_2</title>
+  </head>
+  <body>
+    <script>
+      function calculate(n1, n2, operator) {
+        switch (operator) {
+          case "sum":
+            return n1 + n2;
+
+          case "subs":
+            return n1 - n2;
+
+          case "mul":
+            return n1 * n2;
+
+          case "div":
+            if (n2 === 0) {
+              return "input is invalid";
+            }
+            return n1 / n2;
+
+          default:
+            return "Invalid Operator";
+        }
+      }
+      document.write(calculate(5, 5, "sum"), "<br>");
+      document.write(calculate(15, 11, "subs"), "<br>");
+      document.write(calculate(7, 6, "mul"), "<br>");
+      document.write(calculate(50, 10, "div"), "<br>");
+      document.write(calculate(50, 0, "div"), "<br>");
+      document.write(calculate(50, 10, "mode"), "<br>");
+    </script>
+  </body>
+</html>
