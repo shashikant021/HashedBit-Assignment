@@ -3,14 +3,21 @@ Like this - correctfn(string, wrong, correct)
 Use string.replace in function.
  -->
 
-
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <script>
-            
-        </script>
-    </body>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function correctFn(string, wrong, correct) {
+ 
+        return string.replace(new RegExp(wrong), correct);
+      }
+
+      let strings = "I love my inddio.";
+      let correctedstring = correctFn( strings, "inddio", "India" );
+
+      document.write(correctedstring);
+    </script>
+  </body>
 </html>
