@@ -1,14 +1,28 @@
 <!-- Write a function to find repeated sum of digits until there is only a single digit in the number.
 Example - 456 - 4+5+6 = 15 - 1+5 = 6. -->
 
-
 <html>
   <head>
     <title>Question_8</title>
   </head>
   <body>
     <script>
-        
+      function abc(number) {
+        let numString = number.toString();
+
+        while (numString.length > 1) {
+          let digits = numString.split("").map(Number);
+
+          let sum = digits.reduce((acc, curr) => acc + curr, 0);
+
+          numString = sum.toString();
+        }
+
+        return parseInt(numString);
+      }
+
+      console.log(abc(456));
+      document.write(abc(456));
     </script>
   </body>
 </html>

@@ -1,0 +1,28 @@
+<!-- Write a function to reverse a string.
+Input - Hello
+Outpur - olleH -->
+
+<html>
+  <head>
+    <title>Question_10</title>
+  </head>
+  <body>
+    <script>
+        function reverseString(str) {
+
+    let characters = str.split('');
+    
+    let reversedCharacters = characters.reverse();
+    
+    let reversedStr = reversedCharacters.join('');
+    
+    return reversedStr;
+}
+
+let input = "Hello";
+console.log(reverseString(input)); 
+document.write(reverseString(input)); 
+
+    </script>
+  </body>
+</html>

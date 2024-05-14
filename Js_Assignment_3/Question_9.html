@@ -1,0 +1,24 @@
+<!-- Write a function to count the number of words in a paragraph. -->
+
+
+
+<html>
+  <head>
+    <title>Question_9</title>
+  </head>
+  <body>
+    <script>
+      function countWords(paragraph) {
+
+    let words = paragraph.split(/\s+/);
+
+    return words.length;
+}
+
+let paragraph = "Write a function to count the number of words in a paragraph..";
+console.log(countWords(paragraph));
+document.write(countWords(paragraph));
+
+    </script>
+  </body>
+</html>
