@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        /* Add your CSS styles here */
+        .completed {
+            text-decoration: line-through solid rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <header>My Todo list</header>
+    <form onsubmit="submitfn(event)">
+        <div>
+            <input type="text" class="todo-input">
+            <button type="submit" class="todo-button">ADD</button>
+        </div>
+    </form>
+
+    <div class="todo-container">
+        <ul class="todo-list">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        function submitfn(event) {
+            event.preventDefault();
+            const input = document.querySelector(".todo-input");
+            const taskName = input.value.trim();
+
+            if (taskName) {
+                // Create a new todo item
+                const todoItem = document.createElement("div");
+                todoItem.classList.add("todo-item");
+
+                const listItem = document.createElement("li");
+                listItem.textContent = taskName;
+
+                const completeButton = document.createElement("button");
+                completeButton.textContent = "Complete";
+                completeButton.classList.add("complete-btn");
+                completeButton.addEventListener("click", toggleCompleted);
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add("trash-btn");
+                deleteButton.addEventListener("click", deleteTask);
+
+                todoItem.appendChild(listItem);
+                todoItem.appendChild(completeButton);
+                todoItem.appendChild(deleteButton);
+
+                const todoList = document.querySelector(".todo-list");
+                todoList.appendChild(todoItem);
+
+                input.value = ""; // Clear input field
+            }
+        }
+
+        function toggleCompleted(event) {
+            const listItem = event.target.parentElement.querySelector("li");
+            listItem.classList.toggle("completed");
+        }
+
+        function deleteTask(event) {
+            const todoItem = event.target.parentElement;
+            todoItem.remove();
+        }
+    </script>
+</body>
+</html>

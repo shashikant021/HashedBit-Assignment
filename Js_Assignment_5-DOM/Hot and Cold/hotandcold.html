@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Hot and Cold</title>
+  </head>
+  <body>
+    <p id="main">
+      I am learning to generate random number. I will be able to handle
+      randomness in any of my applications that needs it. Press the button to
+      get a random number.
+    </p>
+
+    <button id="btn" onclick="displayRandomNumber()">Click Me!!</button>
+
+    <p id="num"></p>
+
+    <script>
+         function displayRandomNumber() {
+    
+        var randomNumber = Math.floor(Math.random() * 41) - 20;
+
+        document.getElementById('num').textContent = randomNumber;
+
+        var feedback = randomNumber < 0 ? 'Cold' : 'Hot';
+        document.getElementById('feedback').textContent = feedback;
+    }
+    </script>
+  </body>
+</html>
