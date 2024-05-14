@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Dark theme</title>
+    <link rel="stylesheet" href="Darktheme.css">
+  </head>
+  <body>
+
+    <div id="app" class="day">
+
+      <p>
+        I am a HashedBit student, ready to become an awesome full stack
+        developer
+      </p>
+
+      <button onclick="swapTheme()" id="swap" class="button_day">
+        Toggle theme
+      </button>
+
+    </div>
+
+    <script>
+   function swapTheme() {
+           
+            var app = document.getElementById('app');
+
+            
+            if (app.classList.contains('day')) {
+
+                app.classList.remove('day');
+                app.classList.add('night');
+            }
+             else {
+                app.classList.remove('night');
+                app.classList.add('day');
+            }
+        }
+    </script>
+  </body>
+</html>

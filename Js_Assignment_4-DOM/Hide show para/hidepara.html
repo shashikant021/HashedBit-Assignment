@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>hide paragraph</title>
+  </head>
+  <body>
+    
+    <h1>I am a headline made with HTML</h1>
+    <br />
+    <p id="useless-paragraph">Useless paragraph.</p>
+    <br />
+    <button onclick="toggleVisibility()">Toggle Button</button>
+
+    <script>
+      // your js code goes here
+      function toggleVisibility() {
+        var paragraph = document.getElementById("useless-paragraph");
+        paragraph.hidden = !paragraph.hidden;
+      }
+    </script>
+  </body>
+</html>
