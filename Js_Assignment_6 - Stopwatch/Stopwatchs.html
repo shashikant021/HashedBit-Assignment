@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>stopwatch</title>
+    </head>
+    <body>
+        <div id="time">00:00:00</div>
+        <button onclick="start()" id="start">start</button>
+        <button onclick="pause()" id="pause">pause</button>
+        <button onclick="stop()" id="stop">stop</button>
+
+        <script>
+            
+     var timerId;
+    var hours = 0, minutes = 0, seconds = 0;
+
+    function start() {
+      
+        document.getElementById('start').disabled = true;
+        document.getElementById('pause').disabled = false;
+        document.getElementById('stop').disabled = false;
+
+       
+        timerId = setInterval(updateTime, 1000); 
+    }
+
+    function pause() {
+       
+        if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+            document.getElementById('pause').textContent = 'Continue'; 
+        } else {
+            
+            timerId = setInterval(updateTime, 1000);
+            document.getElementById('pause').textContent = 'Pause'; 
+        }
+    }
+
+    function stop() {
+        
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+        
+        
+        clearInterval(timerId);
+        timerId = null;
+        document.getElementById('pause').textContent = 'Pause'; 
+        document.getElementById('start').disabled = false;
+        document.getElementById('pause').disabled = true; 
+        document.getElementById('stop').disabled = true; 
+        updateDisplay(); 
+    }
+
+    function updateTime() {
+        
+        seconds++;
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+        updateDisplay(); 
+    }
+
+    function updateDisplay() {
+        
+        var timeString = padZero(hours) + ':' + padZero(minutes) + ':' + padZero(seconds);
+        document.getElementById('time').textContent = timeString;
+    }
+
+    function padZero(number) {
+        
+        return (number < 10 ? '0' : '') + number;
+    }
+
+
+        </script>
+    </body>
+</html>
